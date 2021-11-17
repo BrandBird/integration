@@ -17,7 +17,11 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "peerDependencies": {},
   "husky": {
@@ -31,8 +35,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@snappify/integration",
-  "author": "Dominik Sumer",
+  "name": "@brandbird/integration",
+  "description": "Integrate Brandbird into your web app",
+  "author": "Jim Raptis",
   "module": "dist/integration.esm.js",
   "size-limit": [
     {

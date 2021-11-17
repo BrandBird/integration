@@ -1,9 +1,9 @@
 <a href="https://brandbird.app/?ref=github"><img src="/assets/header.png"/></a>
 
 <div align="center">
-  <img src="https://badgen.net/npm/v/@snappify/integration" alt="Latest release" />
-  <img src="https://badgen.net/bundlephobia/minzip/@snappify/integration" alt="minzipped size"/>
-  <img src="https://github.com/snappify-io/integration/workflows/CI/badge.svg" alt="Build Status" />
+  <img src="https://badgen.net/npm/v/@brandbird/integration" alt="Latest release" />
+  <img src="https://badgen.net/bundlephobia/minzip/@brandbird/integration" alt="minzipped size"/>
+  <img src="https://github.com/brandbird/integration/workflows/CI/badge.svg" alt="Build Status" />
 </div>
 
 <br />
@@ -38,7 +38,7 @@ yarn add @brandbird/integration
 
 ## Usage
 
-> Be aware that we restrict the integration of Brandbird by platforms at the moment. Are you interested? Hit us up at info@brandbird.io
+> Be aware that we restrict the integration of Brandbird by platforms at the moment. Are you interested? Hit us up at jim@brandbird.app
 
 ```ts
 import { openBrandBird } from '@brandbird/integration';
@@ -48,7 +48,7 @@ async function() {
     const blob = await openBrandBird(
       { 
         provider: 'Google', // The name of your platform
-        src: 'Input image in BASE64 format or a public URL', // Optional
+        src: 'Image in BASE64 format or public URL', // Optional: input image to editor
       }
     );
 
