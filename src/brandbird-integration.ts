@@ -18,14 +18,10 @@ export class BrandBirdIntegration {
     this.openBrandBird = this.openBrandBird.bind(this);
     this.onMessage = this.onMessage.bind(this);
     this.teardown = this.teardown.bind(this);
-    this.data = {
-      config: DEFAULT_CONFIG,
-      resolve: () => {},
-      reject: () => {},
-    };
   }
 
   openBrandBird(_config?: BrandBirdConfig) {
+    if(this.data) return
     return new Promise<Blob>((resolve, reject) => {
       this.data = {
         resolve,
@@ -59,11 +55,12 @@ export class BrandBirdIntegration {
   }
 
   private onMessage(event: MessageEvent) {
+    
     if (!this.data) {
       return;
     }
 
-    if (event.origin === this.data.config.url) {
+    if (this.data.config.url?.includes(event.origin)) {
       if (typeof event.data === 'object') {
         switch (event.data.type) {
           case 'loaded':
