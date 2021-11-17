@@ -2,7 +2,7 @@ import { BrandBirdConfig } from './types';
 
 const DEFAULT_CONFIG: BrandBirdConfig = {
   url: 'https://brandbird.app/integration',
-  provider: "Company"
+  provider: 'Company',
 };
 
 export class BrandBirdIntegration {
@@ -42,7 +42,7 @@ export class BrandBirdIntegration {
         '<div><div></div><div class="double-bounce2"></div></div>';
 
       const iframe = document.createElement('iframe');
-      iframe.src = this.data.config.url + "";
+      iframe.src = this.data.config.url + '';
 
       wrapper.appendChild(loadingSpinner);
       wrapper.appendChild(iframe);
