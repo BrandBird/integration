@@ -3,7 +3,6 @@
 <div align="center">
   <img src="https://badgen.net/npm/v/@brandbird/integration" alt="Latest release" />
   <img src="https://badgen.net/bundlephobia/minzip/@brandbird/integration" alt="minzipped size"/>
-  {/* <img src="https://github.com/brandbird/integration/workflows/CI/badge.svg" alt="Build Status" /> */}
 </div>
 
 <br />

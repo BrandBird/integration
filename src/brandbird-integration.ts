@@ -27,9 +27,6 @@ export class BrandBirdIntegration {
 
   openBrandBird(_config?: BrandBirdConfig) {
     return new Promise<Blob>((resolve, reject) => {
-      if (this.data) {
-        return;
-      }
       this.data = {
         resolve,
         reject,
