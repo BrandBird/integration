@@ -62,32 +62,30 @@ export class BrandBirdIntegration {
       return;
     }
 
-    if (this.data.config.url?.includes(event.origin)) {
-      if (typeof event.data === 'object') {
-        switch (event.data.type) {
-          case 'loaded':
-            this.data.iframe?.contentWindow?.postMessage(
-              {
-                type: 'hello',
-                provider: this.data.config.provider,
-                src: this.data.config.src,
-              },
-              '*'
-            );
-            break;
-          case 'cancel':
-            this.teardown();
-            break;
-          case 'image':
-            this.data.resolve(event.data.blob);
-            this.teardown();
-            break;
-          case 'error':
-            console.error('BrandBird reported an error: ', event.data.error);
-            this.data.reject(event.data.error);
-            this.teardown();
-            break;
-        }
+    if (typeof event.data === 'object') {
+      switch (event.data.type) {
+        case 'loaded':
+          this.data.iframe?.contentWindow?.postMessage(
+            {
+              type: 'hello',
+              provider: this.data.config.provider,
+              src: this.data.config.src,
+            },
+            '*'
+          );
+          break;
+        case 'cancel':
+          this.teardown();
+          break;
+        case 'image':
+          this.data.resolve(event.data.blob);
+          this.teardown();
+          break;
+        case 'error':
+          console.error('BrandBird reported an error: ', event.data.error);
+          this.data.reject(event.data.error);
+          this.teardown();
+          break;
       }
     }
   }
