@@ -1,4 +1,4 @@
-<a href="https://snappify.io/"><img src="https://user-images.githubusercontent.com/4418879/114391549-ec320480-9b97-11eb-8620-3c7afe117878.png"/></a>
+<a href="https://brandbird.app/?ref=github"><img src="/assets/header.png"/></a>
 
 <div align="center">
   <img src="https://badgen.net/npm/v/@snappify/integration" alt="Latest release" />
