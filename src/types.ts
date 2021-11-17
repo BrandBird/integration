@@ -1,9 +1,5 @@
-export interface SnappifyConfig {
+export interface BrandBirdConfig {
   url?: string;
-}
-
-export interface UserInfo {
-  displayName: string;
-  userName: string;
-  image: string;
-}
+  provider?: string;
+  src: string;
+};

@@ -1,13 +1,13 @@
-import { UserInfo, SnappifyConfig } from './types';
+import { BrandBirdConfig } from './types';
 
-const DEFAULT_CONFIG: SnappifyConfig = {
-  url: 'https://snappify.io',
+const DEFAULT_CONFIG: BrandBirdConfig = {
+  url: 'https://brandbird.app/integration',
+  provider: "Company"
 };
 
-export class SnappifyIntegration {
+export class BrandBirdIntegration {
   data?: {
-    config: SnappifyConfig;
-    user: UserInfo;
+    config: BrandBirdConfig;
     resolve: (blob: Blob) => void;
     reject: (reason: any) => void;
     container?: HTMLDivElement;
@@ -15,12 +15,12 @@ export class SnappifyIntegration {
   };
 
   constructor() {
-    this.openSnappify = this.openSnappify.bind(this);
+    this.openBrandBird = this.openBrandBird.bind(this);
     this.onMessage = this.onMessage.bind(this);
     this.teardown = this.teardown.bind(this);
   }
 
-  openSnappify(user: UserInfo, _config?: SnappifyConfig) {
+  openBrandBird(_config?: BrandBirdConfig) {
     return new Promise<Blob>((resolve, reject) => {
       if (this.data) {
         return;
@@ -29,21 +29,20 @@ export class SnappifyIntegration {
         resolve,
         reject,
         config: Object.assign({}, DEFAULT_CONFIG, _config),
-        user,
       };
 
       const container = document.createElement('div');
-      container.className = '__snappify-container';
+      container.className = '__brandbird-container';
 
       const wrapper = document.createElement('div');
-      wrapper.className = '__snappify-wrapper';
+      wrapper.className = '__brandbird-wrapper';
 
       const loadingSpinner = document.createElement('div');
       loadingSpinner.innerHTML =
         '<div><div></div><div class="double-bounce2"></div></div>';
 
       const iframe = document.createElement('iframe');
-      iframe.src = this.data.config.url + '/i';
+      iframe.src = this.data.config.url + "";
 
       wrapper.appendChild(loadingSpinner);
       wrapper.appendChild(iframe);
@@ -69,7 +68,8 @@ export class SnappifyIntegration {
             this.data.iframe?.contentWindow?.postMessage(
               {
                 type: 'hello',
-                user: this.data.user,
+                provider: this.data.config.provider,
+                src: this.data.config.src,
               },
               '*'
             );
@@ -82,7 +82,7 @@ export class SnappifyIntegration {
             this.teardown();
             break;
           case 'error':
-            console.error('Snappify reported an error: ', event.data.error);
+            console.error('BrandBird reported an error: ', event.data.error);
             this.data.reject(event.data.error);
             this.teardown();
             break;

@@ -7,18 +7,18 @@
 </div>
 
 <br />
-<div align="center"><strong>The official library for integrating snappify into your webapp.</strong></div>
-<div align="center">Interested? Just hit us up at <a href="mailto:info@snappify.io">info@snappify.io</a></div>
+<div align="center"><strong>The official library for integrating BrandBird into your webapp.</strong></div>
+<div align="center">Interested? Just hit us up at <a href="mailto:jim@brandbird.app">jim@brandbird.app</a></div>
 <br />
 <div align="center">
-  <a href="https://snappify.io/">Website</a> 
+  <a href="https://brandbird.app/">Website</a> 
   <span> · </span>
-  <a href="https://twitter.com/snappify_io">Twitter</a>
+  <a href="https://twitter.com/brandbirdapp">Twitter</a>
 </div>
 
 <br />
 <div align="center">
-  <sub>Made by <a href="https://twitter.com/dominiksumer">Dominik</a> & <a href="https://twitter.com/AnkiCodes">Anki</a> ✨</sub>
+  <sub>Made by <a href="https://twitter.com/d__raptis">Jim Raptis</a> ✨</sub>
 </div>
 <br />
 
@@ -27,30 +27,28 @@
 #### With NPM
 
 ```sh
-npm i @snappify/integration
+npm i @brandbird/integration
 ```
 
 #### With yarn
 
 ```sh
-yarn add @snappify/integration
+yarn add @brandbird/integration
 ```
 
 ## Usage
 
-> Be aware that we restrict the integration of snappify by platforms at the moment. Are you interested? Hit us up at info@snappify.io
+> Be aware that we restrict the integration of Brandbird by platforms at the moment. Are you interested? Hit us up at info@brandbird.io
 
 ```ts
-import { openSnappify } from '@snappify/integration';
+import { openBrandBird } from '@brandbird/integration';
 
 async function() {
   try {
-    const blob = await openSnappify(
-      { // pass the information of the user
-        displayName: 'Elon Musk',
-        userName: 'elonmusk',
-        image:
-          'https://pbs.twimg.com/profile_images/1364491704817098753/V22-Luf7_400x400.jpg',
+    const blob = await openBrandBird(
+      { 
+        provider: 'Google', // The name of your platform
+        src: 'Input image in BASE64 format or a public URL', // Optional
       }
     );
 

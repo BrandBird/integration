@@ -1,6 +1,6 @@
 import './index.less';
-import { SnappifyIntegration } from './snappify-integration';
+import { BrandBirdIntegration } from './brandbird-integration';
 
-const integration = new SnappifyIntegration();
+const integration = new BrandBirdIntegration();
 
-export const openSnappify = integration.openSnappify;
+export const openBrandbird = integration.openBrandBird;
