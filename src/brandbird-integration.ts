@@ -18,6 +18,11 @@ export class BrandBirdIntegration {
     this.openBrandBird = this.openBrandBird.bind(this);
     this.onMessage = this.onMessage.bind(this);
     this.teardown = this.teardown.bind(this);
+    this.data = {
+      config: DEFAULT_CONFIG,
+      resolve: () => {},
+      reject: () => {},
+    };
   }
 
   openBrandBird(_config?: BrandBirdConfig) {
