@@ -2,7 +2,8 @@ import { BrandBirdConfig } from './types';
 
 const DEFAULT_CONFIG: BrandBirdConfig = {
   url: 'https://brandbird.app/integration',
-  provider: 'Company',
+  provider: 'Your Product Name',
+  platform: 'twitter',
 };
 
 export class BrandBirdIntegration {
@@ -70,6 +71,7 @@ export class BrandBirdIntegration {
               type: 'hello',
               provider: this.data.config.provider,
               src: this.data.config.src,
+              platform: this.data.config.platform,
             },
             '*'
           );

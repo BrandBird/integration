@@ -46,8 +46,9 @@ async function() {
   try {
     const blob = await openBrandBird(
       { 
-        provider: 'Google', // The name of your platform
+        provider: 'YOUR PRODUCT NAME', // The name of your own product
         src: 'Image in BASE64 format or public URL', // Optional: input image to editor
+        platform: 'twitter', // Optional: adjust the canvas size. Options: 'twitter' | 'instagram' | 'linkedin' | 'facebook'
       }
     );
 
