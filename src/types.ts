@@ -1,6 +1,6 @@
 export interface BrandBirdConfig {
   url?: string;
   provider?: string;
-  platform?: string;
-  src?: 'twitter' | 'instagram' | 'linkedin' | 'facebook';
+  src?: string;
+  platform?: 'twitter' | 'instagram' | 'linkedin' | 'facebook';
 }
