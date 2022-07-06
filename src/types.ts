@@ -2,5 +2,7 @@ export interface BrandBirdConfig {
   url?: string;
   provider?: string;
   src?: string;
-  platform?: 'twitter' | 'instagram' | 'linkedin' | 'facebook';
+  width?: number;
+  height?: number;
+  platform?: 'twitter' | 'instagram' | 'linkedin' | 'facebook' | 'dribbble';
 }

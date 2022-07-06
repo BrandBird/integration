@@ -72,6 +72,8 @@ export class BrandBirdIntegration {
               provider: this.data.config.provider,
               src: this.data.config.src,
               platform: this.data.config.platform,
+              width: this.data.config.width,
+              height: this.data.config.height,
             },
             '*'
           );
